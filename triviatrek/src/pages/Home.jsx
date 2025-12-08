@@ -1,0 +1,957 @@
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  Play,
+  Trophy,
+  BookOpen,
+  TrendingUp,
+  ArrowRight,
+  Sparkles,
+  Instagram,
+  Linkedin,
+  Mail,
+} from "lucide-react";
+import axios from "axios";
+import { motion, AnimatePresence } from "framer-motion";
+import homeImage from "../assets/Home_image.png";
+
+// ---------- Triviatrek Features section config ----------
+
+const featureItems = [
+  {
+    id: 0,
+    title: "Get instant feedback",
+    description:
+      "Collect real-time responses from every player so you can see exactly how your quiz is landing, slide by slide.",
+    mockupVariant: "feedback",
+  },
+  {
+    id: 1,
+    title: "Test your knowledge",
+    description:
+      "Run focused question rounds that highlight strengths, expose gaps, and turn every session into a learning checkpoint.",
+    mockupVariant: "knowledge",
+  },
+  {
+    id: 2,
+    title: "Spark curiosity",
+    description:
+      "Mix categories, difficulty levels, and motion to keep people leaning in, thinking ahead, and wanting the next question.",
+    mockupVariant: "curiosity",
+  },
+  {
+    id: 3,
+    title: "Make smart choices",
+    description:
+      "Use quiz data and answer trends to guide decisions—what to revisit, where to go deeper, and how to improve your content.",
+    mockupVariant: "choices",
+  },
+  {
+    id: 4,
+    title: "Create memorable moments",
+    description:
+      "Blend timing, visuals, and friendly competition so each quiz feels like a polished experience, not just another form.",
+    mockupVariant: "memorable",
+  },
+];
+
+const FeaturesIcon = ({ id, isActive }) => {
+  const stroke = isActive ? "#4E6AFE" : "#111827";
+  const commonProps = {
+    fill: "none",
+    stroke,
+    strokeWidth: 1.6,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+    className: "w-7 h-7 flex-shrink-0",
+  };
+
+  switch (id) {
+    case 0:
+      // chat bubble + check
+      return (
+        <svg viewBox="0 0 24 24" {...commonProps}>
+          <path d="M5 19l-1.5 2.5A.8.8 0 0 0 4.2 23L7 21h8a4 4 0 0 0 4-4v-5a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v5" />
+          <path d="M10 11.5l1.7 1.7L15.5 9.5" />
+        </svg>
+      );
+    case 1:
+      // checklist / board
+      return (
+        <svg viewBox="0 0 24 24" {...commonProps}>
+          <rect x="4" y="5" width="16" height="14" rx="2" />
+          <path d="M9 3h6" />
+          <path d="M8 10h4" />
+          <path d="M8 14h6" />
+          <path d="M6 10.5l-1.2 1.2" />
+        </svg>
+      );
+    case 2:
+      // spark
+      return (
+        <svg viewBox="0 0 24 24" {...commonProps}>
+          <path d="M12 3v4" />
+          <path d="M12 17v4" />
+          <path d="M4.9 6.4l2.8 2" />
+          <path d="M16.3 15.6l2.8 2" />
+          <path d="M3 12h4" />
+          <path d="M17 12h4" />
+          <path d="M4.9 17.6l2.8-2" />
+          <path d="M16.3 8.4l2.8-2" />
+          <circle cx="12" cy="12" r="2.8" />
+        </svg>
+      );
+    case 3:
+      // decision arrows
+      return (
+        <svg viewBox="0 0 24 24" {...commonProps}>
+          <path d="M12 3v7" />
+          <path d="M7 21h4v-7.5L6 9" />
+          <path d="M17 21h-4v-7.5L18 9" />
+          <path d="M9 4l3-2 3 2" />
+        </svg>
+      );
+    case 4:
+      // picture frame
+      return (
+        <svg viewBox="0 0 24 24" {...commonProps}>
+          <rect x="4" y="5" width="16" height="14" rx="2" />
+          <circle cx="9" cy="11" r="1.6" />
+          <path d="M5.5 18l3.2-3.2a1.4 1.4 0 0 1 2 0L14 18l2.4-2.4a1.4 1.4 0 0 1 2 0L19.5 18" />
+        </svg>
+      );
+    default:
+      return null;
+  }
+};
+
+const FeaturesMockupContent = ({ variant }) => {
+  switch (variant) {
+    case "feedback":
+      return (
+        <div className="space-y-6">
+          <div className="h-4 w-1/2 bg-slate-100 rounded-full" />
+          <div className="space-y-4">
+            {[7.2, 6.4, 6.8].map((score, idx) => (
+              <div key={idx} className="space-y-2">
+                <div className="h-3 w-3/4 bg-slate-100 rounded-full" />
+                <div className="relative h-6 rounded-full bg-slate-100 overflow-hidden">
+                  <div className="absolute inset-y-0 left-0 w-full bg-gradient-to-r from-indigo-200 via-sky-200 to-indigo-100 opacity-70" />
+                  <div
+                    className="absolute inset-y-1 left-1 rounded-full bg-blue-600 text-[10px] px-2 flex items-center justify-center text-white shadow-sm"
+                    style={{ width: `${14 + idx * 6}%` }}
+                  >
+                    {score.toFixed(1)}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    case "knowledge":
+      return (
+        <div className="space-y-5">
+          <div className="h-4 w-2/3 bg-slate-100 rounded-full" />
+          <div className="grid grid-cols-2 gap-4">
+            {[1, 2, 3, 4].map((i) => (
+              <div
+                key={i}
+                className="rounded-2xl border border-slate-100 bg-slate-50 p-3 space-y-2"
+              >
+                <div className="h-3 w-3/4 bg-slate-200 rounded-full" />
+                <div className="h-2 w-1/2 bg-slate-100 rounded-full" />
+                <div className="h-2 w-2/3 bg-slate-100 rounded-full" />
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    case "curiosity":
+      return (
+        <div className="space-y-6">
+          <div className="flex items-center gap-2">
+            <div className="h-3 w-10 bg-purple-100 rounded-full" />
+            <div className="h-3 w-24 bg-slate-100 rounded-full" />
+          </div>
+          <div className="flex gap-3">
+            {[0, 1, 2].map((i) => (
+              <div
+                key={i}
+                className="flex-1 h-32 rounded-3xl bg-gradient-to-t from-indigo-100 via-slate-50 to-white border border-slate-100"
+              />
+            ))}
+          </div>
+        </div>
+      );
+    case "choices":
+      return (
+        <div className="space-y-5">
+          <div className="h-4 w-1/2 bg-slate-100 rounded-full" />
+          <div className="space-y-3">
+            {[0, 1, 2].map((i) => (
+              <div
+                key={i}
+                className="flex items-center justify-between rounded-2xl border border-slate-100 bg-slate-50 px-4 py-3"
+              >
+                <div className="space-y-1">
+                  <div className="h-3 w-24 bg-slate-200 rounded-full" />
+                  <div className="h-2 w-16 bg-slate-100 rounded-full" />
+                </div>
+                <div className="h-6 px-3 rounded-full bg-blue-600/10 text-[10px] text-blue-700 flex items-center">
+                  Recommended
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    case "memorable":
+    default:
+      return (
+        <div className="space-y-6">
+          <div className="h-4 w-3/4 bg-slate-100 rounded-full" />
+          <div className="rounded-3xl bg-gradient-to-r from-indigo-100 via-sky-100 to-rose-100 h-40 flex items-center justify-center border border-slate-100">
+            <div className="space-y-3 text-center">
+              <div className="h-3 w-32 mx-auto bg-white/70 rounded-full" />
+              <div className="h-2 w-24 mx-auto bg-white/70 rounded-full" />
+            </div>
+          </div>
+          <div className="flex justify-between text-[10px] text-slate-400">
+            <span>Start</span>
+            <span>Unforgettable finish</span>
+          </div>
+        </div>
+      );
+  }
+};
+
+const featuresListVariants = {
+  hidden: { opacity: 0, x: -50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+      when: "beforeChildren",
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const featuresItemVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.35, ease: "easeOut" },
+  },
+};
+
+const featuresMockupVariants = {
+  hidden: { opacity: 0, x: 50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+const Home = () => {
+  const navigate = useNavigate();
+  const [categories, setCategories] = useState([]);
+  const [stats, setStats] = useState({ categories: 0, quizzes: 0, users: 0 });
+  const [activeFeatureId, setActiveFeatureId] = useState(0);
+  const activeIndex = activeFeatureId;
+
+  const toggleIndex = (id) => {
+    // Keep exactly one item open at a time
+    if (id === activeIndex) {
+      return;
+    }
+    setActiveFeatureId(id);
+  };
+
+  // Framer Motion variants for the "Why We Choose TrivakTrek" section
+  const whyContainerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const whyLeftVariants = {
+    hidden: { opacity: 0, x: -60 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.7, ease: "easeOut" },
+    },
+  };
+
+  const whyRightVariants = {
+    hidden: { opacity: 0, x: 60 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.7, ease: "easeOut", delay: 0.1 },
+    },
+  };
+
+  // Slides data for "Why We Choose TrivakTrek"
+  const slides = [
+    {
+      id: 0,
+      heading: "TURN QUESTIONS INTO EXPERIENCES",
+      description:
+        "Turn presentations into interactive journeys that keep your players engaged from the very first question. TrivakTrek blends clean design, smart timing, and playful motion to make every quiz session feel polished and memorable.",
+    },
+    {
+      id: 1,
+      heading: "DESIGNED FOR REAL PARTICIPANTS",
+      description:
+        "From mobile to desktop, every screen feels intuitive and distraction‑free. Players see clear controls, responsive layouts, and smooth feedback that makes answering questions feel effortless.",
+    },
+    {
+      id: 2,
+      heading: "BUILT TO KEEP ENERGY HIGH",
+      description:
+        "Subtle animations, fast loading, and focused visuals keep momentum through every round. You control the pace with timers, navigation, and motion that supports—not overwhelms—the experience.",
+    },
+  ];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) =>
+      prev === 0 ? slides.length - 1 : prev - 1
+    );
+  };
+
+  const togglePause = () => {
+    setIsPaused((prev) => !prev);
+  };
+
+  // Auto-play logic for slides (every 5 seconds when not paused)
+  useEffect(() => {
+    if (isPaused) return undefined;
+
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, [isPaused, slides.length]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [catRes, subRes] = await Promise.all([
+          axios.get("http://localhost:3000/categories").catch(() => ({ data: [] })),
+          axios.get("http://localhost:3000/subcategories").catch(() => ({ data: [] })),
+        ]);
+        setCategories(subRes.data?.slice(0, 6) || []);
+        setStats({
+          categories: catRes.data?.length || 0,
+          quizzes: subRes.data?.length || 0,
+          users: 0,
+        });
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden pt-20 pb-32 px-4 bg-white">
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-fadeIn">
+            {/* Left Side - Content */}
+            <div className="space-y-6">
+              <h1 className="text-5xl md:text-7xl font-bold text-gray-900 leading-tight">
+                Test Your
+                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Knowledge
+                </span>
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-600 max-w-xl">
+                Challenge yourself with thousands of questions across multiple categories.
+                Learn, compete, and climb the leaderboard!
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 pt-6">
+                <Link
+                  to="/Category"
+                  className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-2"
+                >
+                  <Play className="group-hover:scale-110 transition-transform" size={24} />
+                  Start Quiz
+                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                </Link>
+                <Link
+                  to="/Category"
+                  className="px-8 py-4 bg-white text-gray-700 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border-2 border-gray-200"
+                >
+                  Explore Categories
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Side - Image */}
+            <div className="flex justify-center lg:justify-end">
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="relative"
+              >
+                <div className="absolute -inset-4 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-3xl blur-2xl"></div>
+                <img
+                  src={homeImage}
+                  alt="TriviaTrek Home"
+                  className="relative w-full max-w-lg h-auto rounded-2xl shadow-2xl object-contain"
+                />
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Triviatrek Features Section (Mentimeter-inspired) */}
+      <section className="py-20 px-4 bg-[#F7F3F0]">
+        <div className="container mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* LEFT – Features list */}
+          <motion.div
+            variants={featuresListVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.25 }}
+            className="space-y-6"
+          >
+            {featureItems.map((feature) => {
+              const isActive = feature.id === activeIndex;
+              return (
+                <motion.button
+                  key={feature.id}
+                  type="button"
+                  onClick={() => toggleIndex(feature.id)}
+                  variants={featuresItemVariants}
+                  whileHover={{ scale: 1.03 }}
+                  className={`w-full text-left flex items-start gap-4 py-4 px-3 rounded-2xl transition-colors border-t first:border-t-0 border-slate-200/60 ${
+                    isActive ? "bg-white/80 shadow-md" : "bg-transparent"
+                  }`}
+                >
+                  <div className="mt-1">
+                    <FeaturesIcon id={feature.id} isActive={isActive} />
+                  </div>
+                  <div className="flex-1 border-b border-slate-200/60 pb-4 last:border-b-0">
+                    <motion.h3
+                      whileHover={{ scale: 1.03 }}
+                      className={`text-lg md:text-xl font-semibold transition-colors ${
+                        isActive ? "text-[#4E6AFE]" : "text-gray-900"
+                      }`}
+                    >
+                      {feature.title}
+                    </motion.h3>
+                    <AnimatePresence initial={false}>
+                      {isActive && (
+                        <motion.div
+                          key="content"
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: "easeOut" }}
+                          className="overflow-hidden"
+                        >
+                          <p className="mt-2 text-sm md:text-base text-gray-600 leading-relaxed">
+                            {feature.description}
+                          </p>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                </motion.button>
+              );
+            })}
+          </motion.div>
+
+          {/* RIGHT – Device mockup */}
+          <motion.div
+            variants={featuresMockupVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.25 }}
+            className="flex justify-center lg:justify-end"
+          >
+            <div className="relative w-full max-w-xl">
+              {/* Rounded background container */}
+              <div className="absolute -inset-6 bg-[#F7F3F0] rounded-[2.5rem] shadow-[0_32px_70px_rgba(15,23,42,0.12)]" />
+
+              {/* Device frame */}
+              <div className="relative bg-white rounded-[2.2rem] border-[6px] border-black/85 overflow-hidden px-6 py-6 md:px-8 md:py-8">
+                {/* Simple top bar */}
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-slate-200" />
+                    <span className="w-2 h-2 rounded-full bg-slate-200" />
+                    <span className="w-2 h-2 rounded-full bg-slate-200" />
+                  </div>
+                  <div className="h-2 w-16 rounded-full bg-slate-100" />
+                </div>
+
+                {/* Mockup content – animated per active feature */}
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={featureItems.find((f) => f.id === activeFeatureId)?.mockupVariant}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="min-h-[180px] md:min-h-[220px]"
+                  >
+                    <FeaturesMockupContent
+                      variant={
+                        featureItems.find((f) => f.id === activeFeatureId)
+                          ?.mockupVariant || "feedback"
+                      }
+                    />
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 px-4 bg-white/50 backdrop-blur-sm">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
+                <BookOpen className="text-blue-600" size={32} />
+              </div>
+              <h3 className="text-4xl font-bold text-gray-900 mb-2">{stats.categories}</h3>
+              <p className="text-gray-600 font-medium">Categories</p>
+            </div>
+            <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-4">
+                <Play className="text-purple-600" size={32} />
+              </div>
+              <h3 className="text-4xl font-bold text-gray-900 mb-2">{stats.quizzes}</h3>
+              <p className="text-gray-600 font-medium">Quizzes Available</p>
+            </div>
+            <div className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-100 rounded-full mb-4">
+                <Trophy className="text-amber-600" size={32} />
+              </div>
+              <h3 className="text-4xl font-bold text-gray-900 mb-2">{stats.users}+</h3>
+              <p className="text-gray-600 font-medium">Active Players</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why We Choose TrivakTrek - Mentimeter-style Section */}
+      <section className="py-20 px-4 bg-[#f7f1ea]">
+        <motion.div
+          className="container mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+          variants={whyContainerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          {/* LEFT SIDE – Steps + Text */}
+          <motion.div
+            key={currentSlide}
+            variants={whyLeftVariants}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-col gap-10"
+          >
+            <div className="flex items-start gap-8">
+              {/* Vertical index line */}
+              <div className="relative flex flex-col items-center">
+                <div className="h-2" />
+                <div className="flex flex-col items-center gap-8">
+                  {slides.map((slide, index) => {
+                    const isActive = index === currentSlide;
+                    const label = String(index + 1).padStart(2, "0");
+                    return (
+                      <div
+                        key={slide.id}
+                        className="flex flex-col items-center gap-2"
+                      >
+                        <span
+                          className={`text-3xl font-semibold leading-none ${
+                            isActive
+                              ? "text-blue-600"
+                              : "text-slate-700/70"
+                          }`}
+                        >
+                          {label}
+                        </span>
+                        <div className="w-px h-16 last:h-10 bg-slate-400/40" />
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Text block */}
+              <div className="flex-1">
+                <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-gray-900 leading-tight mb-4">
+                  {slides[currentSlide].heading}
+                </h2>
+                <p className="text-base md:text-lg text-gray-700 max-w-xl leading-relaxed">
+                  {slides[currentSlide].description}
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* RIGHT SIDE – Device mockups */}
+          <motion.div
+            key={`devices-${currentSlide}`}
+            variants={whyRightVariants}
+            initial="hidden"
+            animate="visible"
+            className="relative flex justify-center lg:justify-end"
+          >
+            <div className="relative w-full max-w-xl">
+              {/* Soft background halo */}
+              <div className="absolute -inset-6 bg-white/60 rounded-[2.5rem] shadow-[0_40px_80px_rgba(15,23,42,0.12)]" />
+
+              {/* Laptop / host screen */}
+              <div className="relative bg-white rounded-[2.2rem] border border-slate-200 shadow-[0_24px_60px_rgba(15,23,42,0.16)] p-6 md:p-8">
+                {/* Top bar */}
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-slate-200" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-slate-200" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-slate-200" />
+                  </div>
+                  <div className="h-2 w-20 rounded-full bg-slate-100" />
+                </div>
+
+                {/* Main content area */}
+                <div className="space-y-6">
+                  <div className="h-4 w-3/4 bg-slate-100 rounded-full" />
+                  <div className="h-4 w-1/2 bg-slate-100 rounded-full" />
+
+                  <div className="mt-6 grid grid-cols-3 gap-4 items-center">
+                    <div className="col-span-2 h-40 md:h-48 rounded-3xl bg-slate-50 border border-dashed border-slate-200 flex items-center justify-center">
+                      <div className="space-y-3 text-center">
+                        <div className="h-8 w-24 mx-auto bg-slate-100 rounded-full" />
+                        <div className="h-3 w-32 mx-auto bg-slate-100 rounded-full" />
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="h-3 w-full bg-slate-100 rounded-full" />
+                      <div className="h-3 w-3/4 bg-slate-100 rounded-full" />
+                      <div className="h-3 w-2/3 bg-slate-100 rounded-full" />
+                      <div className="h-3 w-4/5 bg-slate-100 rounded-full" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Phone / participant screen */}
+              <div className="absolute -left-2 -bottom-6 md:-left-10 md:-bottom-10 w-32 sm:w-40 md:w-44">
+                <div className="bg-white rounded-[2rem] border border-slate-200 shadow-[0_20px_40px_rgba(15,23,42,0.18)] px-4 pt-5 pb-6 flex flex-col items-center gap-3">
+                  <div className="w-16 h-1.5 rounded-full bg-slate-200 mb-1" />
+                  <div className="w-full space-y-3">
+                    <div className="h-3 w-3/4 bg-slate-100 rounded-full mx-auto" />
+                    <div className="h-10 w-full rounded-2xl border border-slate-200 bg-slate-50" />
+                    <div className="h-2 w-2/3 bg-slate-100 rounded-full mx-auto" />
+                    <button className="mt-2 w-full py-2 rounded-full bg-blue-600 text-white text-xs font-semibold">
+                      Submit
+                    </button>
+                  </div>
+                  <div className="mt-1 w-10 h-1 rounded-full bg-slate-200" />
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        {/* Slide controls */}
+        <div className="container mx-auto max-w-6xl mt-10 flex items-center gap-4">
+          <button
+            onClick={togglePause}
+            className="flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-md border border-gray-200 text-gray-800 text-sm font-semibold"
+          >
+            {isPaused ? "▶" : "Ⅱ"}
+          </button>
+          <button
+            onClick={prevSlide}
+            className="flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-md border border-gray-200 text-gray-700"
+          >
+            ←
+          </button>
+          <button
+            onClick={nextSlide}
+            className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 text-white shadow-md"
+          >
+            →
+          </button>
+        </div>
+      </section>
+
+      {/* Popular Quizzes Section with Marquee */}
+      {categories.length > 0 && (
+        <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-blue-50 overflow-hidden">
+          <div className="container mx-auto max-w-6xl">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                Popular Quizzes
+              </h2>
+              <p className="text-xl text-gray-600">Try these trending categories</p>
+            </div>
+
+            {/* Marquee Container */}
+            <div className="relative overflow-hidden">
+              <div className="flex animate-marquee gap-6">
+                {/* First set of items */}
+                {categories.map((sub, index) => (
+                  <div
+                    key={`first-${sub.id}`}
+                    onClick={() => navigate(`/Difficulty/local-${sub.id}`, {
+                      state: {
+                        customMeta: {
+                          categoryName: "Popular",
+                          subcategoryName: sub.name,
+                          subCategoryId: sub.id,
+                          categoryId: sub.categoryId,
+                        },
+                      },
+                    })}
+                    className="group flex-shrink-0 w-80 p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 cursor-pointer"
+                  >
+                    {sub.imageUrl && (
+                      <div className="w-full h-40 rounded-xl overflow-hidden mb-4">
+                        <img
+                          src={sub.imageUrl}
+                          alt={sub.name}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        />
+                      </div>
+                    )}
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{sub.name}</h3>
+                    <p className="text-gray-600 text-sm mb-4">Click to start quiz</p>
+                    <div className="flex items-center text-blue-600 font-medium group-hover:gap-2 transition-all">
+                      Start Quiz
+                      <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                ))}
+                {/* Duplicate set for seamless loop */}
+                {categories.map((sub, index) => (
+                  <div
+                    key={`second-${sub.id}`}
+                    onClick={() => navigate(`/Difficulty/local-${sub.id}`, {
+                      state: {
+                        customMeta: {
+                          categoryName: "Popular",
+                          subcategoryName: sub.name,
+                          subCategoryId: sub.id,
+                          categoryId: sub.categoryId,
+                        },
+                      },
+                    })}
+                    className="group flex-shrink-0 w-80 p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 cursor-pointer"
+                  >
+                    {sub.imageUrl && (
+                      <div className="w-full h-40 rounded-xl overflow-hidden mb-4">
+                        <img
+                          src={sub.imageUrl}
+                          alt={sub.name}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        />
+                      </div>
+                    )}
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{sub.name}</h3>
+                    <p className="text-gray-600 text-sm mb-4">Click to start quiz</p>
+                    <div className="flex items-center text-blue-600 font-medium group-hover:gap-2 transition-all">
+                      Start Quiz
+                      <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="text-center mt-12">
+              <Link
+                to="/Category"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
+              >
+                View All Categories
+                <ArrowRight size={20} />
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Footer - Get in Touch Section */}
+      <footer className="py-16 px-4 bg-black text-white">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+            {/* Left Section: Contact & Social */}
+            <div className="space-y-6">
+              <h2 className="text-4xl md:text-5xl font-bold">Get in Touch</h2>
+              <p className="text-gray-300 text-lg leading-relaxed max-w-md">
+                Ecosystem bootstrapping learning curve lean startup disruptive. Marketing long tail disruptive agile development partner.
+              </p>
+              
+              {/* Social Media Icons */}
+              <div className="flex items-center gap-4 pt-4">
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 hover:border-white hover:bg-white/10 transition-all duration-300 group"
+                  aria-label="Instagram"
+                >
+                  <Instagram size={20} className="text-gray-300 group-hover:text-white transition-colors" />
+                </a>
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 hover:border-white hover:bg-white/10 transition-all duration-300 group"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={20} className="text-gray-300 group-hover:text-white transition-colors" />
+                </a>
+                <a
+                  href="https://pinterest.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 hover:border-white hover:bg-white/10 transition-all duration-300 group"
+                  aria-label="Pinterest"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors"
+                  >
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 19c-.721 0-1.418-.109-2.073-.312.286-.465.713-1.227.95-1.878.087-.33.53-2.205.53-2.205s-.135-.27-.135-.669c0-.626.363-1.094.814-1.094.384 0 .569.288.569.633 0 .386-.245.962-.372 1.496-.106.448.225.814.669.814.803 0 1.419-.847 1.419-2.07 0-.854-.574-1.451-1.394-1.451-.949 0-1.54.712-1.54 1.448 0 .386.146.797.329 1.021a.135.135 0 01.04.155l.108.043c.097.04.13.065.177.106.06.052.077.06.105.036.202-.25.312-.565.312-.909 0-.748-.4-1.435-1.23-1.435-.82 0-1.48.615-1.48 1.435 0 .5.188.944.44 1.247.048.057.055.106.04.164l-.04.17c-.006.027-.01.067.024.093.033.026.09.017.12-.01.35-.408.57-.94.57-1.512 0-1.234-1.01-2.37-2.61-2.37-1.78 0-2.82 1.3-2.82 2.7 0 .998.377 1.85.99 2.18.11.061.17.034.197-.1l.19-.76c.014-.056.008-.076-.04-.117-.2-.175-.325-.4-.325-.72 0-.87.66-1.64 1.7-1.64.92 0 1.36.56 1.36 1.31 0 .99-.42 1.83-1.04 1.83-.34 0-.59-.28-.51-.62.097-.41.285-.85.285-1.15 0-.265-.14-.49-.43-.49-.34 0-.61.35-.61.82 0 .3.1.5.1.5s-.34 1.44-.4 1.7c-.12.5-.02 1.19-.01 1.25.01.08.11.1.15.04.2-.25.27-.58.37-.96l.15-.6s.09-.45.11-.56c.01-.07-.04-.1-.1-.07-.4.16-1.06.2-1.52.2-.4 0-.8-.05-1.17-.15-.18-.05-.2-.14-.14-.3.15-.32.42-.75.57-1.01.09-.13.12-.22.07-.4-.08-.3-.12-.61-.12-.93 0-2.26 1.64-4.34 4.52-4.34 2.37 0 4.21 1.73 4.21 4.04 0 2.36-1.49 4.26-3.55 4.26-.69 0-1.35-.36-1.57-.84 0 0-.34 1.3-.42 1.62-.15.58-.56 1.31-.83 1.76 1.23.38 2.54.59 3.9.59 6.627 0 12-5.373 12-12S18.627 0 12 0z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-700 hover:border-white hover:bg-white/10 transition-all duration-300 group"
+                  aria-label="Twitter"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors"
+                  >
+                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            {/* Right Section: Portfolio & Email */}
+            <div className="flex flex-col gap-8 md:items-end md:justify-center">
+              {/* Portfolio Block */}
+              <div className="flex items-center gap-4 group cursor-pointer">
+                <div className="w-12 h-12 rounded-full bg-white/10 border border-gray-700 flex items-center justify-center group-hover:bg-white/20 group-hover:border-white transition-all duration-300">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className="w-6 h-6 text-white"
+                  >
+                    <path d="M12 24C5.385 24 0 18.615 0 12S5.385 0 12 0s12 5.385 12 12-5.385 12-12 12zm10.12-10.358c-.35-.11-3.17-.953-6.384-.438 1.34 3.684 1.887 6.684 1.992 7.308 2.3-1.555 3.936-4.02 4.395-6.87zm-6.115 7.808c-.153-.9-.75-4.032-2.19-7.77l-.066.02c-5.79 2.015-7.86 6.025-8.04 6.4 1.73 1.358 3.92 2.166 6.29 2.166 1.42 0 2.77-.29 4-.816zm-11.62-2.58c.232-.4 3.045-5.055 8.332-6.765.135-.045.27-.084.405-.12-.26-.585-.54-1.167-.832-1.72C7.17 11.775 2.206 11.71 1.756 11.7l-.004.312c0 2.633.998 5.037 2.634 6.855zm-2.42-8.955c.46.008 4.683.026 9.477-1.248-1.698-3.018-3.53-5.558-3.8-5.928-2.868 1.35-5.01 3.99-5.676 7.17zM9.6 2.052c.282.38 2.145 2.914 3.822 6 3.645-1.365 5.19-3.44 5.373-3.702-1.81-1.61-4.19-2.586-6.795-2.586-.825 0-1.63.1-2.4.285zm10.335 3.483c-.218.29-1.935 2.493-5.724 4.04.24.49.47.985.68 1.486.08.18.15.36.22.53 3.41-.43 6.8.26 7.14.33-.02-2.42-.88-4.64-2.31-6.38z" />
+                  </svg>
+                </div>
+                <a
+                  href="https://dribbble.com/example"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg text-gray-300 hover:text-white transition-colors"
+                >
+                  Dribbble.com/example
+                </a>
+              </div>
+
+              {/* Email Block */}
+              <div className="flex items-center gap-4 group cursor-pointer">
+                <div className="w-12 h-12 rounded-full bg-white/10 border border-gray-700 flex items-center justify-center group-hover:bg-white/20 group-hover:border-white transition-all duration-300">
+                  <Mail size={24} className="text-white" />
+                </div>
+                <a
+                  href="mailto:contact@example.com"
+                  className="text-lg text-gray-300 hover:text-white transition-colors"
+                >
+                  contact@example.com
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Copyright */}
+          <div className="mt-12 pt-8 border-t border-gray-800">
+            <div className="text-center text-sm text-gray-500">
+              © 2024 TriviaTrek. All rights reserved.
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <style>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.8s ease-out;
+        }
+        .delay-1000 {
+          animation-delay: 1s;
+        }
+        @keyframes marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .animate-marquee {
+          animation: marquee 30s linear infinite;
+        }
+        .animate-marquee:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default Home;
