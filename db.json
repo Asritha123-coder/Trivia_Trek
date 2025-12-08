@@ -1,0 +1,1655 @@
+{
+  "categories": [
+    {
+      "id": "e05e",
+      "name": "backend-beginner"
+    },
+    {
+      "id": "6a55",
+      "name": "DSA"
+    }
+  ],
+  "subcategories": [
+    {
+      "id": "6fcb",
+      "name": "HTML",
+      "categoryId": null,
+      "imageUrl": "https://tse2.mm.bing.net/th/id/OIP.g6cwVXKZlAt7_bIyVl-HAwHaE7?pid=Api&P=0&h=180",
+      "color": "#F0F9FF"
+    },
+    {
+      "id": "61be",
+      "name": "CSS",
+      "categoryId": null,
+      "imageUrl": "https://tse1.mm.bing.net/th/id/OIP.DDfgmrsRBFLyrRomnDGcrAHaDt?pid=Api&P=0&h=180",
+      "color": "#3198dd"
+    },
+    {
+      "id": "cd2b",
+      "name": "sql-beginner",
+      "categoryId": "e05e",
+      "imageUrl": "https://tse1.mm.bing.net/th/id/OIP.DDfgmrsRBFLyrRomnDGcrAHaDt?pid=Api&P=0&h=180",
+      "color": "#6f2e84"
+    },
+    {
+      "id": "899d",
+      "name": "Arrays",
+      "categoryId": "6a55",
+      "imageUrl": "https://tse4.mm.bing.net/th/id/OIP.0035v5dBa0MXZDNCvcUscgHaD_?pid=Api&P=0&h=180",
+      "color": "#4a9cd3"
+    }
+  ],
+  "questions": [
+    {
+      "id": "389b",
+      "categoryId": null,
+      "subCategoryId": "6fcb",
+      "level": "medium",
+      "questions": [
+        {
+          "question": "Hi,",
+          "optionA": "a",
+          "optionB": "b",
+          "optionC": "c",
+          "optionD": "d",
+          "correct": "B"
+        }
+      ]
+    },
+    {
+      "id": "5d90",
+      "categoryId": null,
+      "subCategoryId": "61be",
+      "level": "easy",
+      "questions": [
+        {
+          "question": "hello",
+          "optionA": "a",
+          "optionB": "b",
+          "optionC": "c",
+          "optionD": "d",
+          "correct": "A"
+        }
+      ]
+    },
+    {
+      "categoryId": "e05e",
+      "subCategoryId": "cd2b",
+      "level": "easy",
+      "questions": [
+        {
+          "question": "what is sql",
+          "optionA": "structured query language",
+          "optionB": "strong query language",
+          "optionC": "structured question language",
+          "optionD": "sql",
+          "correct": "A"
+        }
+      ],
+      "id": "2e73"
+    },
+    {
+      "categoryId": "6a55",
+      "subCategoryId": "899d",
+      "level": "medium",
+      "questions": [
+        {
+          "question": "Array index start at which index number?",
+          "optionA": "0",
+          "optionB": "-1",
+          "optionC": "1",
+          "optionD": "2",
+          "correct": "A"
+        }
+      ],
+      "id": "dea3"
+    }
+  ],
+  "quizAttempts": [
+    {
+      "id": "run-001",
+      "userName": "Aisha Khan",
+      "userEmail": "aisha@example.com",
+      "categoryId": null,
+      "subCategoryId": "1b5e",
+      "level": "medium",
+      "score": 7,
+      "totalQuestions": 10,
+      "durationSeconds": 430,
+      "date": "2025-11-18T14:32:00Z",
+      "missedQuestions": [
+        {
+          "questionId": "05ca-q1",
+          "question": "hi"
+        },
+        {
+          "questionId": "dc04-q1",
+          "question": "hello 123"
+        }
+      ]
+    },
+    {
+      "id": "run-002",
+      "userName": "Leo Carter",
+      "userEmail": "leo@example.com",
+      "categoryId": null,
+      "subCategoryId": "1f93",
+      "level": "easy",
+      "score": 9,
+      "totalQuestions": 10,
+      "durationSeconds": 390,
+      "date": "2025-11-17T09:05:00Z",
+      "missedQuestions": [
+        {
+          "questionId": "05ca-q1",
+          "question": "hi"
+        }
+      ]
+    },
+    {
+      "id": "run-003",
+      "userName": "Priya Verma",
+      "userEmail": "priya@example.com",
+      "categoryId": null,
+      "subCategoryId": "1b5e",
+      "level": "hard",
+      "score": 6,
+      "totalQuestions": 10,
+      "durationSeconds": 520,
+      "date": "2025-11-16T18:10:00Z",
+      "missedQuestions": [
+        {
+          "questionId": "dc04-q1",
+          "question": "hello 123"
+        },
+        {
+          "questionId": "05ca-q1",
+          "question": "hi"
+        },
+        {
+          "questionId": "new-q2",
+          "question": "Capital of France?"
+        }
+      ]
+    },
+    {
+      "id": "8979",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": null,
+      "subCategoryId": "1b5e",
+      "level": "medium",
+      "score": 1,
+      "totalQuestions": 2,
+      "durationSeconds": 10,
+      "date": "2025-11-22T13:50:37.215Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-1",
+          "question": "hello 123"
+        }
+      ]
+    },
+    {
+      "id": "fcde",
+      "userName": "john",
+      "userEmail": "john@example.com",
+      "categoryId": "11",
+      "subCategoryId": null,
+      "level": "easy",
+      "score": 4,
+      "totalQuestions": 10,
+      "durationSeconds": 29,
+      "date": "2025-11-22T13:56:04.088Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-0",
+          "question": "In which film does Humphrey Bogart say the famous line, \"Here's looking at you, kid\"?"
+        },
+        {
+          "questionId": "q-1",
+          "question": "Which movie includes a giant bunny-like spirit who has magic powers including growing trees?"
+        },
+        {
+          "questionId": "q-2",
+          "question": "What is the orange and white bot's name in \"Star Wars: The Force Awakens\"?"
+        },
+        {
+          "questionId": "q-4",
+          "question": "What breed of dog was Marley in the film \"Marley & Me\" (2008)?"
+        },
+        {
+          "questionId": "q-7",
+          "question": "What was the first monster to appear alongside Godzilla?"
+        },
+        {
+          "questionId": "q-9",
+          "question": "Which actor plays Obi-Wan Kenobi in Star Wars Episodes I-III?"
+        }
+      ]
+    },
+    {
+      "id": "930c",
+      "userName": "john",
+      "userEmail": "john@example.com",
+      "categoryId": "22",
+      "subCategoryId": null,
+      "level": "hard",
+      "score": 3,
+      "totalQuestions": 10,
+      "durationSeconds": 26,
+      "date": "2025-11-22T13:57:09.734Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-0",
+          "question": "Where is the fast food chain \"Panda Express\" headquartered?"
+        },
+        {
+          "questionId": "q-4",
+          "question": "The mountainous Khyber Pass connects which of the two following countries?"
+        },
+        {
+          "questionId": "q-5",
+          "question": "Which country was NOT formerly part of Yugoslavia?"
+        },
+        {
+          "questionId": "q-6",
+          "question": "What is Canada's largest island?"
+        },
+        {
+          "questionId": "q-7",
+          "question": "What is the area of Vatican City?"
+        },
+        {
+          "questionId": "q-8",
+          "question": "How many countries border Kyrgyzstan?"
+        },
+        {
+          "questionId": "q-9",
+          "question": "Which of these cities has a 4° East longitude. "
+        }
+      ]
+    },
+    {
+      "id": "c70e",
+      "userName": "Asritha Asritha",
+      "userEmail": "asritha1125@gmail.com",
+      "categoryId": "17",
+      "subCategoryId": null,
+      "level": "easy",
+      "score": 2,
+      "totalQuestions": 10,
+      "durationSeconds": 12,
+      "date": "2025-11-24T08:55:12.348Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-2",
+          "question": "The medical term for the belly button is which of the following?"
+        },
+        {
+          "questionId": "q-3",
+          "question": "What is the standard SI unit for time?"
+        },
+        {
+          "questionId": "q-4",
+          "question": "What is the standard SI unit for temperature?"
+        },
+        {
+          "questionId": "q-5",
+          "question": "The human heart has how many chambers?"
+        },
+        {
+          "questionId": "q-6",
+          "question": "How many planets are in our Solar System?"
+        },
+        {
+          "questionId": "q-7",
+          "question": "What animal takes part in Schrödinger's most famous thought experiment?"
+        },
+        {
+          "questionId": "q-8",
+          "question": "Which noble gas has the lowest atomic number?"
+        },
+        {
+          "questionId": "q-9",
+          "question": "This element, when overcome with extreme heat and pressure, creates diamonds."
+        }
+      ]
+    },
+    {
+      "id": "4017",
+      "userName": "Asritha Asritha",
+      "userEmail": "asritha1125@gmail.com",
+      "categoryId": null,
+      "subCategoryId": "24dd",
+      "level": "medium",
+      "score": 0,
+      "totalQuestions": 1,
+      "durationSeconds": 4,
+      "date": "2025-11-24T09:05:36.128Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-0",
+          "question": "akhila"
+        }
+      ]
+    },
+    {
+      "id": "ed95",
+      "userName": "Asritha Asritha",
+      "userEmail": "asritha1125@gmail.com",
+      "categoryId": "18",
+      "subCategoryId": null,
+      "level": "easy",
+      "score": 1,
+      "totalQuestions": 10,
+      "durationSeconds": 13,
+      "date": "2025-11-24T09:17:24.021Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-1",
+          "question": "According to the International System of Units, how many bytes are in a kilobyte of RAM?"
+        },
+        {
+          "questionId": "q-2",
+          "question": "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?"
+        },
+        {
+          "questionId": "q-3",
+          "question": "What programming language was GitHub written in?"
+        },
+        {
+          "questionId": "q-4",
+          "question": "The series of the Intel HD graphics generation succeeding that of the 5000 and 6000 series (Broadwell) is called:"
+        },
+        {
+          "questionId": "q-5",
+          "question": "Which programming language shares its name with an island in Indonesia?"
+        },
+        {
+          "questionId": "q-6",
+          "question": "What does the \"MP\" stand for in MP3?"
+        },
+        {
+          "questionId": "q-7",
+          "question": "In web design, what does CSS stand for?"
+        },
+        {
+          "questionId": "q-8",
+          "question": "What does CPU stand for?"
+        },
+        {
+          "questionId": "q-9",
+          "question": "If you were to code software in this language you'd only be able to type 0's and 1's."
+        }
+      ]
+    },
+    {
+      "id": "4b52",
+      "userName": "Guest User",
+      "userEmail": "guest@example.com",
+      "categoryId": "10",
+      "subCategoryId": null,
+      "level": "easy",
+      "score": 1,
+      "totalQuestions": 10,
+      "durationSeconds": 102,
+      "date": "2025-11-28T15:44:14.647Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-0",
+          "question": "Who wrote the young adult novel \"The Fault in Our Stars\"?"
+        },
+        {
+          "questionId": "q-1",
+          "question": "This play is generally considered to be the most adaptable of Shakespeare’s works, and follows two “star-crossed lovers”."
+        },
+        {
+          "questionId": "q-2",
+          "question": "In the novel 1984, written by George Orwell, what is the name of the totalitarian regime that controls Oceania?"
+        },
+        {
+          "questionId": "q-3",
+          "question": "What's the second book in George R. R. Martin's 'A Song of Ice and Fire' series?"
+        },
+        {
+          "questionId": "q-4",
+          "question": "What was the name of Captain Nemo's submarine in \"20,000 Leagues Under the Sea\"?"
+        },
+        {
+          "questionId": "q-5",
+          "question": "In what Harry Potter book was a Horcrux first encountered?"
+        },
+        {
+          "questionId": "q-6",
+          "question": "Who wrote the novel 'Fear And Loathing In Las Vegas'?"
+        },
+        {
+          "questionId": "q-7",
+          "question": "Who wrote \"The Scarlet Letter\", published in 1850?"
+        },
+        {
+          "questionId": "q-8",
+          "question": "Which is NOT a book in the Harry Potter Series?"
+        }
+      ]
+    },
+    {
+      "id": "3948",
+      "userName": "Guest User",
+      "userEmail": "guest@example.com",
+      "categoryId": null,
+      "subCategoryId": "24dd",
+      "level": "medium",
+      "score": 0,
+      "totalQuestions": 1,
+      "durationSeconds": 4,
+      "date": "2025-11-29T01:11:51.649Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-0",
+          "question": "akhila"
+        }
+      ]
+    },
+    {
+      "id": "2f2f",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": "11",
+      "subCategoryId": null,
+      "level": "medium",
+      "score": 0,
+      "totalQuestions": 10,
+      "durationSeconds": 31,
+      "date": "2025-11-29T04:03:55.986Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-0",
+          "question": "In the 1994 movie \"Speed\", what is the minimum speed the bus must go to prevent to bomb from exploding?"
+        },
+        {
+          "questionId": "q-1",
+          "question": "Which one of these films are shot entirely in one-take?"
+        },
+        {
+          "questionId": "q-2",
+          "question": "Which animated film did Steven Lisberger direct in 1980 before going on to direct Tron?"
+        },
+        {
+          "questionId": "q-3",
+          "question": "What type of cheese, loved by Wallace and Gromit, had it's sale prices rise after their successful short films?"
+        },
+        {
+          "questionId": "q-4",
+          "question": "Actress Susan Sarandon caught pneumonia during filming of which movie?"
+        },
+        {
+          "questionId": "q-5",
+          "question": "What is the name of the robot in the 1951 science fiction film classic 'The Day the Earth Stood Still'?"
+        },
+        {
+          "questionId": "q-6",
+          "question": "In the 2014 film \"Birdman\", what is the primary instrument in the score?"
+        },
+        {
+          "questionId": "q-7",
+          "question": "Which actor plays the character \"Tommy Jarvis\" in \"Friday the 13th: The Final Chapter\" (1984)?"
+        },
+        {
+          "questionId": "q-8",
+          "question": "Who did the score to the original Blade Runner?"
+        },
+        {
+          "questionId": "q-9",
+          "question": "Who played Baron Victor Frankestein in the 1957 Hammer horror film \"The Curse of Frankenstein\"?"
+        }
+      ]
+    },
+    {
+      "id": "5919",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": "10",
+      "subCategoryId": null,
+      "level": "medium",
+      "score": 4,
+      "totalQuestions": 10,
+      "durationSeconds": 45,
+      "date": "2025-11-29T10:50:53.155Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-4",
+          "question": "Which of these books was NOT written by the Czech author Karel Čapek?"
+        },
+        {
+          "questionId": "q-5",
+          "question": "In Rudyard Kipling's \"The Jungle Book\", what type of snake was Kaa?"
+        },
+        {
+          "questionId": "q-6",
+          "question": "Who wrote the 1967 horror novel \"Rosemary's Baby\"?"
+        },
+        {
+          "questionId": "q-7",
+          "question": "Where does Stephen King's \"IT\" take place?"
+        },
+        {
+          "questionId": "q-8",
+          "question": "The book \"The Little Prince\" was written by..."
+        },
+        {
+          "questionId": "q-9",
+          "question": "In the year 1818, novelist Mary Shelly is credited with writing a fiction novel and creating this infamous character."
+        }
+      ]
+    },
+    {
+      "id": "e94b",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": null,
+      "subCategoryId": "4add",
+      "level": "easy",
+      "score": 1,
+      "totalQuestions": 1,
+      "durationSeconds": 6,
+      "date": "2025-11-29T16:40:06.908Z",
+      "missedQuestions": []
+    },
+    {
+      "id": "b143",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": "10",
+      "subCategoryId": null,
+      "level": "medium",
+      "score": 0,
+      "totalQuestions": 10,
+      "durationSeconds": 11,
+      "date": "2025-11-29T16:57:03.271Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-0",
+          "question": "Mary Shelley is the author of what classic horror story?"
+        },
+        {
+          "questionId": "q-1",
+          "question": "Who is the author of the series \"Malazan Book of the Fallen\"?"
+        },
+        {
+          "questionId": "q-2",
+          "question": "The title of Adolf Hitler's autobiography \"Mein Kampf\" is what when translated to English?"
+        },
+        {
+          "questionId": "q-3",
+          "question": "In Romance of the Three Kingdoms, who was not a member of the Peach Garden Oath?"
+        },
+        {
+          "questionId": "q-4",
+          "question": "In Rudyard Kipling's \"The Jungle Book\", what type of snake was Kaa?"
+        },
+        {
+          "questionId": "q-5",
+          "question": "Where does Stephen King's \"IT\" take place?"
+        },
+        {
+          "questionId": "q-6",
+          "question": "What was the name of the Mysterious Island, in Jules Verne's \"The Mysterious Island\"?"
+        },
+        {
+          "questionId": "q-7",
+          "question": "Which poet wrote \"The Ballad of Reading Gaol\" whilst imprisoned for being gay?"
+        },
+        {
+          "questionId": "q-8",
+          "question": "What was the pen name of novelist, Mary Ann Evans?"
+        },
+        {
+          "questionId": "q-9",
+          "question": "In the novel \"Lord of the Rings\", how many rings of power were given to the race of man?"
+        }
+      ]
+    },
+    {
+      "id": "6346",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": "9",
+      "subCategoryId": null,
+      "level": "medium",
+      "score": 2,
+      "totalQuestions": 10,
+      "durationSeconds": 32,
+      "date": "2025-11-29T18:24:28.687Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-0",
+          "question": "What is the unit of currency in Laos?"
+        },
+        {
+          "questionId": "q-3",
+          "question": "Who is the founder of \"The Lego Group\"?"
+        },
+        {
+          "questionId": "q-4",
+          "question": "The Mexican Beer \"Corona\" is what type of beer?"
+        },
+        {
+          "questionId": "q-5",
+          "question": "What is the German word for \"spoon\"?"
+        },
+        {
+          "questionId": "q-6",
+          "question": "According to the United States' CDC, one in how many Americans die annually due to smoking?"
+        },
+        {
+          "questionId": "q-7",
+          "question": "What is the romanized Japanese word for \"university\"?"
+        },
+        {
+          "questionId": "q-8",
+          "question": "What name represents the letter \"M\" in the NATO phonetic alphabet?"
+        },
+        {
+          "questionId": "q-9",
+          "question": "Computer manufacturer Compaq was acquired for $25 billion dollars in 2002 by which company?"
+        }
+      ]
+    },
+    {
+      "id": "ecdf",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": "9",
+      "subCategoryId": null,
+      "level": "medium",
+      "score": 0,
+      "totalQuestions": 10,
+      "durationSeconds": 7,
+      "date": "2025-11-29T18:24:59.988Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-0",
+          "question": "What is the unit of currency in Laos?"
+        },
+        {
+          "questionId": "q-1",
+          "question": "In 2013 how much money was lost by Nigerian scams?"
+        },
+        {
+          "questionId": "q-2",
+          "question": "The term \"scientist\" was coined in which year?"
+        },
+        {
+          "questionId": "q-3",
+          "question": "What is the German word for \"spoon\"?"
+        },
+        {
+          "questionId": "q-4",
+          "question": "What name represents the letter \"M\" in the NATO phonetic alphabet?"
+        },
+        {
+          "questionId": "q-5",
+          "question": "Which language is NOT Indo-European?"
+        },
+        {
+          "questionId": "q-6",
+          "question": "Which essential condiment is also known as Japanese horseradish?"
+        },
+        {
+          "questionId": "q-7",
+          "question": "What does the \"G\" mean in \"G-Man\"?"
+        },
+        {
+          "questionId": "q-8",
+          "question": "In which country was the 1992 Summer Olympics Games held?"
+        },
+        {
+          "questionId": "q-9",
+          "question": "Linus Pauling, one of the only winners of multiple Nobel Prizes, earned his Nobel Prizes in Chemistry and what?"
+        }
+      ]
+    },
+    {
+      "id": "abbd",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": "9",
+      "subCategoryId": null,
+      "level": "medium",
+      "score": 1,
+      "totalQuestions": 10,
+      "durationSeconds": 7,
+      "date": "2025-11-29T18:30:46.437Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-1",
+          "question": "What is the defining characteristic of someone who is described as hirsute?"
+        },
+        {
+          "questionId": "q-2",
+          "question": "Which is the most popular spoken language in the Southern Hemisphere?"
+        },
+        {
+          "questionId": "q-3",
+          "question": "When was WhatsApp founded?"
+        },
+        {
+          "questionId": "q-4",
+          "question": "According to the BBPA, what is the most common pub name in the UK?"
+        },
+        {
+          "questionId": "q-5",
+          "question": "Which river flows through the Scottish city of Glasgow?"
+        },
+        {
+          "questionId": "q-6",
+          "question": "What direction does the Statue of Liberty face?"
+        },
+        {
+          "questionId": "q-7",
+          "question": "The website \"Shut Up & Sit Down\" reviews which form of media?"
+        },
+        {
+          "questionId": "q-8",
+          "question": "What is the name given to Indian food cooked over charcoal in a clay oven?"
+        },
+        {
+          "questionId": "q-9",
+          "question": "According to the United States' CDC, one in how many Americans die annually due to smoking?"
+        }
+      ]
+    },
+    {
+      "id": "d9b8",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": "9",
+      "subCategoryId": null,
+      "level": "medium",
+      "score": 0,
+      "totalQuestions": 10,
+      "durationSeconds": 5,
+      "date": "2025-11-29T18:34:49.272Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-0",
+          "question": "Frank Lloyd Wright was the architect behind what famous building?"
+        },
+        {
+          "questionId": "q-1",
+          "question": "What is a dead mall?"
+        },
+        {
+          "questionId": "q-2",
+          "question": "What is the name given to Indian food cooked over charcoal in a clay oven?"
+        },
+        {
+          "questionId": "q-3",
+          "question": "What is the full title of the Prime Minister of the UK?"
+        },
+        {
+          "questionId": "q-4",
+          "question": "According to the United States' CDC, one in how many Americans die annually due to smoking?"
+        },
+        {
+          "questionId": "q-5",
+          "question": "A doctor with a PhD is a doctor of what?"
+        },
+        {
+          "questionId": "q-6",
+          "question": "Where did the pineapple plant originate?"
+        },
+        {
+          "questionId": "q-7",
+          "question": "What year was Apple Inc. founded?"
+        },
+        {
+          "questionId": "q-8",
+          "question": "What is the German word for \"spoon\"?"
+        },
+        {
+          "questionId": "q-9",
+          "question": "Which language is NOT Indo-European?"
+        }
+      ]
+    },
+    {
+      "id": "b8bb",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": "9",
+      "subCategoryId": null,
+      "level": "medium",
+      "score": 0,
+      "totalQuestions": 10,
+      "durationSeconds": 4,
+      "date": "2025-11-29T18:38:13.704Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-0",
+          "question": "The term \"scientist\" was coined in which year?"
+        },
+        {
+          "questionId": "q-1",
+          "question": "What is the highest number of Michelin stars a restaurant can receive?"
+        },
+        {
+          "questionId": "q-2",
+          "question": "This field is sometimes known as “The Dismal Science.”"
+        },
+        {
+          "questionId": "q-3",
+          "question": "The lesser-known continuation of the saying \"Curiosity killed the cat...\" is:"
+        },
+        {
+          "questionId": "q-4",
+          "question": "The new One World Trade Center in Manhattan, New York City was designed by which architect? "
+        },
+        {
+          "questionId": "q-5",
+          "question": "What is the German word for \"spoon\"?"
+        },
+        {
+          "questionId": "q-6",
+          "question": "What is the average life span of a garden ant?"
+        },
+        {
+          "questionId": "q-7",
+          "question": "Amsterdam Centraal station is twinned with what station?"
+        },
+        {
+          "questionId": "q-8",
+          "question": "Which iconic Disneyland attraction was closed in 2017 to be remodeled as a \"Guardians of the Galaxy\" themed ride?"
+        },
+        {
+          "questionId": "q-9",
+          "question": "What is the romanized Russian word for \"winter\"?"
+        }
+      ]
+    },
+    {
+      "id": "2780",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": "9",
+      "subCategoryId": null,
+      "level": "medium",
+      "score": 1,
+      "totalQuestions": 10,
+      "durationSeconds": 7,
+      "date": "2025-11-29T18:46:54.461Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-1",
+          "question": "Where did the pineapple plant originate?"
+        },
+        {
+          "questionId": "q-2",
+          "question": "Which month is Black History Month in the US?"
+        },
+        {
+          "questionId": "q-3",
+          "question": "What is the highest number of Michelin stars a restaurant can receive?"
+        },
+        {
+          "questionId": "q-4",
+          "question": "According to the United States' CDC, one in how many Americans die annually due to smoking?"
+        },
+        {
+          "questionId": "q-5",
+          "question": "What was the soft drink Pepsi originally introduced as?"
+        },
+        {
+          "questionId": "q-6",
+          "question": "In 2013 how much money was lost by Nigerian scams?"
+        },
+        {
+          "questionId": "q-7",
+          "question": "Which of these is the name of a Japanese system of alternative medicine, literally meaning \"finger pressure\"?"
+        },
+        {
+          "questionId": "q-8",
+          "question": "What fast food chain has the most locations globally? "
+        },
+        {
+          "questionId": "q-9",
+          "question": "The Mexican Beer \"Corona\" is what type of beer?"
+        }
+      ]
+    },
+    {
+      "id": "01d4",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": "18",
+      "subCategoryId": null,
+      "level": "medium",
+      "score": 1,
+      "totalQuestions": 10,
+      "durationSeconds": 43,
+      "date": "2025-11-30T08:54:03.510Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-1",
+          "question": "The teapot often seen in many 3D modeling applications is called what?"
+        },
+        {
+          "questionId": "q-2",
+          "question": "Which of these people was NOT a founder of Apple Inc?"
+        },
+        {
+          "questionId": "q-3",
+          "question": "What does the acronym CDN stand for in terms of networking?"
+        },
+        {
+          "questionId": "q-4",
+          "question": "How many bits make up the significand portion of a single precision floating point number?"
+        },
+        {
+          "questionId": "q-5",
+          "question": "What does AD stand for in relation to Windows Operating Systems? "
+        },
+        {
+          "questionId": "q-6",
+          "question": "When was the programming language \"C#\" released?"
+        },
+        {
+          "questionId": "q-7",
+          "question": "What was Bitcoin's block size limit in 2010?"
+        },
+        {
+          "questionId": "q-8",
+          "question": "Originally used in PCM adapters, what frequency is the standard for sampling audio in the Compact Disc Digital Audio format?"
+        },
+        {
+          "questionId": "q-9",
+          "question": "Moore's law originally stated that the number of transistors on a microprocessor chip would double every..."
+        }
+      ]
+    },
+    {
+      "id": "4308",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": "9",
+      "subCategoryId": null,
+      "level": "medium",
+      "score": 1,
+      "totalQuestions": 10,
+      "durationSeconds": 6,
+      "date": "2025-12-01T06:54:19.840Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-1",
+          "question": "When was WhatsApp founded?"
+        },
+        {
+          "questionId": "q-2",
+          "question": "Which essential condiment is also known as Japanese horseradish?"
+        },
+        {
+          "questionId": "q-3",
+          "question": "In what year did Halley's Comet, which will not appear again until the year 2061, previously approach Earth?"
+        },
+        {
+          "questionId": "q-4",
+          "question": "When was Hubba Bubba first introduced?"
+        },
+        {
+          "questionId": "q-5",
+          "question": "Where does water from Poland Spring water bottles come from?"
+        },
+        {
+          "questionId": "q-6",
+          "question": "The architect known as Le Corbusier was an important figure in what style of architecture?"
+        },
+        {
+          "questionId": "q-7",
+          "question": "What is the name given to Indian food cooked over charcoal in a clay oven?"
+        },
+        {
+          "questionId": "q-8",
+          "question": "What character was once considered to be the 27th letter of the alphabet?"
+        },
+        {
+          "questionId": "q-9",
+          "question": "Earl Grey tea is black tea flavoured with what?"
+        }
+      ]
+    },
+    {
+      "id": "1c40",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": "9",
+      "subCategoryId": null,
+      "level": "medium",
+      "score": 1,
+      "totalQuestions": 10,
+      "durationSeconds": 4,
+      "date": "2025-12-01T10:47:43.424Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-1",
+          "question": "The early part of which decade, did the Goth Subculture begin?"
+        },
+        {
+          "questionId": "q-2",
+          "question": "Which of these is the name of a Japanese system of alternative medicine, literally meaning \"finger pressure\"?"
+        },
+        {
+          "questionId": "q-3",
+          "question": "In what year did Halley's Comet, which will not appear again until the year 2061, previously approach Earth?"
+        },
+        {
+          "questionId": "q-4",
+          "question": "Which of these Nicktoons were NOT originally a short on Oh Yeah! Cartoons before becoming their own series?"
+        },
+        {
+          "questionId": "q-5",
+          "question": "What does a milliner make and sell?"
+        },
+        {
+          "questionId": "q-6",
+          "question": "Which country has the most Trappist breweries?"
+        },
+        {
+          "questionId": "q-7",
+          "question": "What is the average life span of a garden ant?"
+        },
+        {
+          "questionId": "q-8",
+          "question": "Which of these American singers and songwriters won a Nobel Prize in Literature?"
+        },
+        {
+          "questionId": "q-9",
+          "question": "Which logical fallacy means to attack the character of your opponent rather than their arguments?"
+        }
+      ]
+    },
+    {
+      "id": "7ba1",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": "11",
+      "subCategoryId": null,
+      "level": "medium",
+      "score": 1,
+      "totalQuestions": 10,
+      "durationSeconds": 12,
+      "date": "2025-12-05T09:23:58.963Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-0",
+          "question": "Who directed the movie \"Alien\"?"
+        },
+        {
+          "questionId": "q-2",
+          "question": "Which of the following films was NOT directed by Quentin Tarantino?"
+        },
+        {
+          "questionId": "q-3",
+          "question": "Who played Baron Victor Frankestein in the 1957 Hammer horror film \"The Curse of Frankenstein\"?"
+        },
+        {
+          "questionId": "q-4",
+          "question": "In which 1955 film does Frank Sinatra play Nathan Detroit?"
+        },
+        {
+          "questionId": "q-5",
+          "question": "In the 2010 Nightmare on Elm Street reboot, who played Freddy Kruger?"
+        },
+        {
+          "questionId": "q-6",
+          "question": "In the 1979 British film \"Quadrophenia\" what is the name of the main protagonist?"
+        },
+        {
+          "questionId": "q-7",
+          "question": "In the movie \"Back to the Future,\" what speed does Doc Brown's DeLorean need to reach in order to travel through time?"
+        },
+        {
+          "questionId": "q-8",
+          "question": "Brendan Fraser starred in the following movies, except which one?"
+        },
+        {
+          "questionId": "q-9",
+          "question": "Who voiced Metalbeard in \"The Lego Movie\"?"
+        }
+      ]
+    },
+    {
+      "id": "a585",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": "11",
+      "subCategoryId": null,
+      "level": "medium",
+      "score": 0,
+      "totalQuestions": 10,
+      "durationSeconds": 20,
+      "date": "2025-12-05T09:26:05.565Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-0",
+          "question": "What is the make and model of the tour vehicles in \"Jurassic Park\" (1993)?"
+        },
+        {
+          "questionId": "q-1",
+          "question": "What city did the monster attack in the film, \"Cloverfield\"?"
+        },
+        {
+          "questionId": "q-2",
+          "question": "What is the name of the Artificial Intelligence system in the 1983 film, \"WarGames\"?"
+        },
+        {
+          "questionId": "q-3",
+          "question": "In the 1999 movie Fight Club, which of these is not a rule of the \"fight club\"?"
+        },
+        {
+          "questionId": "q-4",
+          "question": "Who played Baron Victor Frankestein in the 1957 Hammer horror film \"The Curse of Frankenstein\"?"
+        },
+        {
+          "questionId": "q-5",
+          "question": "What does TIE stand for in reference to the TIE Fighter in \"Star Wars\"?"
+        },
+        {
+          "questionId": "q-6",
+          "question": "In the Friday The 13th series, what is Jason's mother's first name?"
+        },
+        {
+          "questionId": "q-7",
+          "question": "Who played Sgt. Gordon Elias in 'Platoon' (1986)?"
+        },
+        {
+          "questionId": "q-8",
+          "question": "Who was the director of \"Scott Pilgrim vs. the World (2010)\"?"
+        },
+        {
+          "questionId": "q-9",
+          "question": "In which African country was the 2006 film 'Blood Diamond' mostly set in?"
+        }
+      ]
+    },
+    {
+      "id": "c7fd",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": "11",
+      "subCategoryId": null,
+      "level": "hard",
+      "score": 0,
+      "totalQuestions": 10,
+      "durationSeconds": 7,
+      "date": "2025-12-05T09:42:23.291Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-0",
+          "question": "The film Mad Max: Fury Road features the Dies Irae  from which composer's requiem?"
+        },
+        {
+          "questionId": "q-1",
+          "question": "In the 1976 film 'Taxi Driver', how many guns did Travis buy from the salesman?"
+        },
+        {
+          "questionId": "q-2",
+          "question": "In the 1974 Christmas flick \"The Year Without a Santa Claus,\" what are the names of the two elves who help Mrs. Claus save Christmas?"
+        },
+        {
+          "questionId": "q-3",
+          "question": "In the Friday The 13th series, what year did Jason drown in?"
+        },
+        {
+          "questionId": "q-4",
+          "question": "What is the name of the assassin in the first \"Hellboy\" movie?"
+        },
+        {
+          "questionId": "q-5",
+          "question": "According to \"Star Wars\" lore, which planet does Obi-Wan Kenobi come from?"
+        },
+        {
+          "questionId": "q-6",
+          "question": "In Big Hero 6, what were Baymax's motions modeled after?"
+        },
+        {
+          "questionId": "q-7",
+          "question": "Which sci-fi cult films plot concerns aliens attempting to prevent humans from creating a doomsday weapon?"
+        },
+        {
+          "questionId": "q-8",
+          "question": "What was the name of the actor who played Leatherface in the 1974 horror film, The Texas Chainsaw Massacre?"
+        },
+        {
+          "questionId": "q-9",
+          "question": "Which actress portrayed Dr. Grace Augustine in the James Cameron movie \"Avatar\"?"
+        }
+      ]
+    },
+    {
+      "id": "880a",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": "9",
+      "subCategoryId": null,
+      "level": "medium",
+      "score": 0,
+      "totalQuestions": 10,
+      "durationSeconds": 26,
+      "date": "2025-12-05T10:00:42.456Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-0",
+          "question": "What does a milliner make and sell?"
+        },
+        {
+          "questionId": "q-1",
+          "question": "The Fields Medal, one of the most sought after awards in mathematics, is awarded every how many years?"
+        },
+        {
+          "questionId": "q-2",
+          "question": "What is a dead mall?"
+        },
+        {
+          "questionId": "q-3",
+          "question": "What is the average life span of a garden ant?"
+        },
+        {
+          "questionId": "q-4",
+          "question": "Macintosh has named six of its operating systems after big cats. What big cat did Macintosh name their 2007 release after? "
+        },
+        {
+          "questionId": "q-5",
+          "question": "The term \"scientist\" was coined in which year?"
+        },
+        {
+          "questionId": "q-6",
+          "question": "Which country drives on the left side of the road?"
+        },
+        {
+          "questionId": "q-7",
+          "question": "What are the three starter Pokemon available in Pokemon Black and White?"
+        },
+        {
+          "questionId": "q-8",
+          "question": "The architect known as Le Corbusier was an important figure in what style of architecture?"
+        },
+        {
+          "questionId": "q-9",
+          "question": "In ancient Greece, if your job were a \"hippeus\" which of these would you own?"
+        }
+      ]
+    },
+    {
+      "id": "80cb",
+      "userName": "akhila",
+      "userEmail": "akhila@example.com",
+      "categoryId": "11",
+      "subCategoryId": null,
+      "level": "medium",
+      "score": 1,
+      "totalQuestions": 10,
+      "durationSeconds": 42,
+      "date": "2025-12-05T10:39:00.282Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-0",
+          "question": "In which African country was the 2006 film 'Blood Diamond' mostly set in?"
+        },
+        {
+          "questionId": "q-1",
+          "question": "In The Lord of the Rings: The Fellowship of the Ring, which one of the following characters from the book was left out of the film?"
+        },
+        {
+          "questionId": "q-2",
+          "question": "In the film \"Requiem for a Dream\", what drug does Jared Leto's character get addicted to?"
+        },
+        {
+          "questionId": "q-3",
+          "question": "How much money did the 2019 Marvel movie \"Avengers: Endgame\" gross for it's record-breaking worldwide opening weekend?"
+        },
+        {
+          "questionId": "q-4",
+          "question": "In the film \"John Wick\" why does John Wick get out of retirement?"
+        },
+        {
+          "questionId": "q-5",
+          "question": "What were the Chilled Monkey Brains made from during Indiana Jones and the Temple of Doom?"
+        },
+        {
+          "questionId": "q-6",
+          "question": "Which former Star Trek actor directed Three Men and a Baby (1987)?"
+        },
+        {
+          "questionId": "q-8",
+          "question": "What is the name of James Dean's character in the 1955 movie \"Rebel Without a Cause\"?"
+        },
+        {
+          "questionId": "q-9",
+          "question": "In which movie does Robin Williams' character have to disguise themselves into a woman?"
+        }
+      ]
+    },
+    {
+      "id": "bf87",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": null,
+      "subCategoryId": "8409",
+      "level": "easy",
+      "score": 0,
+      "totalQuestions": 1,
+      "durationSeconds": 8,
+      "date": "2025-12-05T10:44:49.345Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-0",
+          "question": "What is sql?"
+        }
+      ]
+    },
+    {
+      "id": "5ad3",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": null,
+      "subCategoryId": "8409",
+      "level": "medium",
+      "score": 0,
+      "totalQuestions": 1,
+      "durationSeconds": 13,
+      "date": "2025-12-05T10:47:28.583Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-0",
+          "question": "What is sql?"
+        }
+      ]
+    },
+    {
+      "id": "7fda",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": "9",
+      "subCategoryId": null,
+      "level": "medium",
+      "score": 0,
+      "totalQuestions": 10,
+      "durationSeconds": 17,
+      "date": "2025-12-05T11:03:14.128Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-0",
+          "question": "What is the German word for \"spoon\"?"
+        },
+        {
+          "questionId": "q-1",
+          "question": "What is the romanized Japanese word for \"university\"?"
+        },
+        {
+          "questionId": "q-2",
+          "question": "What is the name of the popular animatronic singing fish prop, singing such hits such as \"Don't Worry, Be Happy\"?"
+        },
+        {
+          "questionId": "q-3",
+          "question": "A statue of Charles Darwin sits in what London museum?"
+        },
+        {
+          "questionId": "q-4",
+          "question": "What direction does the Statue of Liberty face?"
+        },
+        {
+          "questionId": "q-5",
+          "question": "Apple co-founder Steve Jobs died from complications of which form of cancer?"
+        },
+        {
+          "questionId": "q-6",
+          "question": "Which of these companies does NOT manufacture automobiles?"
+        },
+        {
+          "questionId": "q-7",
+          "question": "What is real haggis made of?"
+        },
+        {
+          "questionId": "q-8",
+          "question": "Which country drives on the left side of the road?"
+        },
+        {
+          "questionId": "q-9",
+          "question": "What was the original name of the search engine \"Google\"?"
+        }
+      ]
+    },
+    {
+      "id": "2334",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": null,
+      "subCategoryId": "2ca6",
+      "level": "easy",
+      "score": 1,
+      "totalQuestions": 1,
+      "durationSeconds": 4,
+      "date": "2025-12-05T11:06:08.258Z",
+      "missedQuestions": []
+    },
+    {
+      "id": "74d9",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": "11",
+      "subCategoryId": null,
+      "level": "medium",
+      "score": 0,
+      "totalQuestions": 10,
+      "durationSeconds": 24,
+      "date": "2025-12-05T11:59:09.983Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-0",
+          "question": "In the 1979 British film \"Quadrophenia\" what is the name of the seaside city the mods are visiting?"
+        },
+        {
+          "questionId": "q-1",
+          "question": "What is the correct spelling of the protagonist of the book in The NeverEnding Story (1984)?"
+        },
+        {
+          "questionId": "q-2",
+          "question": "Which movie sequel had improved box office results compared to its original film?"
+        },
+        {
+          "questionId": "q-3",
+          "question": "Who provided a majority of the songs and lyrics for \"Spirit: Stallion of the Cimarron\"?"
+        },
+        {
+          "questionId": "q-4",
+          "question": "What city did the monster attack in the film, \"Cloverfield\"?"
+        },
+        {
+          "questionId": "q-5",
+          "question": "In the movie \"Back to the Future,\" what speed does Doc Brown's DeLorean need to reach in order to travel through time?"
+        },
+        {
+          "questionId": "q-6",
+          "question": "In what year was the first Transformers movie released?"
+        },
+        {
+          "questionId": "q-7",
+          "question": "In what year was the movie \"Police Academy\" released?"
+        },
+        {
+          "questionId": "q-8",
+          "question": "In the movie “The Iron Giant,” this character is the protagonist."
+        },
+        {
+          "questionId": "q-9",
+          "question": "In The Lord of the Rings: The Fellowship of the Ring, which one of the following characters from the book was left out of the film?"
+        }
+      ]
+    },
+    {
+      "id": "fd59",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": null,
+      "subCategoryId": "ae88",
+      "level": "easy",
+      "score": 0,
+      "totalQuestions": 1,
+      "durationSeconds": 5,
+      "date": "2025-12-05T12:02:02.803Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-0",
+          "question": "Array index start from"
+        }
+      ]
+    },
+    {
+      "id": "3332",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": null,
+      "subCategoryId": "ae88",
+      "level": "medium",
+      "score": 0,
+      "totalQuestions": 1,
+      "durationSeconds": 11,
+      "date": "2025-12-05T12:04:01.507Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-0",
+          "question": "Array index start from"
+        }
+      ]
+    },
+    {
+      "id": "e30f",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": "18",
+      "subCategoryId": null,
+      "level": "medium",
+      "score": 1,
+      "totalQuestions": 10,
+      "durationSeconds": 23,
+      "date": "2025-12-05T12:41:27.892Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-1",
+          "question": "Originally used in PCM adapters, what frequency is the standard for sampling audio in the Compact Disc Digital Audio format?"
+        },
+        {
+          "questionId": "q-2",
+          "question": "The teapot often seen in many 3D modeling applications is called what?"
+        },
+        {
+          "questionId": "q-3",
+          "question": "Approximately how many Apple I personal computers were created?"
+        },
+        {
+          "questionId": "q-4",
+          "question": "Which of these programming languages is a low-level language?"
+        },
+        {
+          "questionId": "q-5",
+          "question": "Which programming language was developed by Sun Microsystems in 1995?"
+        },
+        {
+          "questionId": "q-6",
+          "question": "How many cores does the Intel i7-6950X have?"
+        },
+        {
+          "questionId": "q-7",
+          "question": "Whistler was the codename of this Microsoft Operating System."
+        },
+        {
+          "questionId": "q-8",
+          "question": "What was the first Android version specifically optimized for tablets?"
+        },
+        {
+          "questionId": "q-9",
+          "question": "In programming, the ternary operator is mostly defined with what symbol(s)?"
+        }
+      ]
+    },
+    {
+      "id": "ae78",
+      "userName": "admin_user",
+      "userEmail": "admin@example.com",
+      "categoryId": "6a55",
+      "subCategoryId": "899d",
+      "level": "medium",
+      "score": 0,
+      "totalQuestions": 1,
+      "durationSeconds": 12,
+      "date": "2025-12-05T12:45:10.932Z",
+      "missedQuestions": [
+        {
+          "questionId": "q-0",
+          "question": "Array index start at which index number?"
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": "8d3e",
+      "name": "Asritha",
+      "email": "asritha276cloud@gmail.com",
+      "googleId": "112441023790446765831",
+      "password": ""
+    },
+    {
+      "id": "11bd",
+      "name": "admin_user",
+      "email": "admin@example.com",
+      "password": "123456",
+      "role": "admin"
+    },
+    {
+      "id": "ae11",
+      "name": "Asritha Asritha",
+      "email": "asritha1125@gmail.com",
+      "googleId": "111065758582351080239",
+      "password": "",
+      "role": "user"
+    },
+    {
+      "id": "f13c",
+      "name": "john",
+      "email": "john@example.com",
+      "password": "123789",
+      "role": "user"
+    },
+    {
+      "id": "e772",
+      "name": "pavithra",
+      "email": "john@example.com",
+      "password": "456789",
+      "role": "user"
+    },
+    {
+      "id": "a588",
+      "name": "dinesh",
+      "email": "dinesh@example.com",
+      "password": "234567",
+      "role": "user"
+    },
+    {
+      "id": "bb5b",
+      "name": "admin123",
+      "email": "admin123@example.com",
+      "password": "234566",
+      "role": "admin"
+    },
+    {
+      "id": "e9fb",
+      "name": "akhila",
+      "email": "akhila@example.com",
+      "password": "987654",
+      "role": "user"
+    }
+  ]
+}
