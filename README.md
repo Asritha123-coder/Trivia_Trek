@@ -96,19 +96,7 @@ Frontend → http://localhost:5173
 
 Backend → http://localhost:3000
 
-🌐 API Endpoints (JSON Server)
-Categories
-Method	Endpoint	Description
-GET	/categories	Get all categories
-POST	/categories	Add new category
-PUT	/categories/:id	Update category
-DELETE	/categories/:id	Delete category
-Questions
-Method	Endpoint	Description
-GET	/questions?catId=1	Get questions by category
-POST	/questions	Add question
-PUT	/questions/:id	Edit question
-DELETE	/questions/:id	Delete question
+
 🔥 Important Logic Used
 1️⃣ State Management (useState + useRef)
 
